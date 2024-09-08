@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:shelf/shelf.dart';
 import 'package:shelf/shelf_io.dart';
 import 'package:shelf_router/shelf_router.dart';
+import 'package:dart_shelf_crud_example/models/book.dart' as book_model;
 
 // Configure routes.
 final _router = Router()
@@ -19,6 +20,9 @@ Response _echoHandler(Request request) {
 }
 
 void main(List<String> args) async {
+  var book = book_model.Book("Artemoire's guide to the galaxy");
+  print(book);
+
   // Use any available host or container IP (usually `0.0.0.0`).
   final ip = InternetAddress.anyIPv4;
 
